@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { Route, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import store, { history } from './store';
-import Home from './routes/Home';
-import Products from './routes/Products';
-import About from './routes/About';
 import AppHeader from './components/AppHeader';
-
+import Routes from './routes/routes';
 class App extends Component {
 	render() {
 		return (
@@ -16,9 +13,7 @@ class App extends Component {
 					<Router history={history}>
 						<main>
 							<AppHeader />
-							<Route exact={true} path="/" component={Home} />
-							<Route path="/about" component={About} />
-							<Route path="/products" component={Products} />
+							<Routes/>
 						</main>
 					</Router>
 				</ConnectedRouter>
