@@ -1,22 +1,12 @@
 import * as React from 'react';
+import {RouteComponentProps} from 'react-router-dom';
 
-export class Product extends React.Component {
-	constructor(props: any) {
-		super(props);
-		this.state = {
-			productId: null,
-		};
-	}
-	componentDidMount() {
-		this.setState((state, props) => ({
-			productId: 1,
-		}));
-	}
-	render() {
-		return (
-			<div>
-				Product
-			</div>
-		);
-	}
-}
+type TParams = { id: string };
+
+export default ({ match }: RouteComponentProps<TParams>) => {
+	return (
+		<div>
+			Product {match.params.id}
+		</div>
+	);
+};

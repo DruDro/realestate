@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Router } from 'react-router-dom';
 import store, { history } from './store';
 import AppHeader from './components/AppHeader';
-import Routes from './routes/routes';
+import Routes from './routes';
 class App extends Component {
 	render() {
 		return (
